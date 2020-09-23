@@ -1,0 +1,35 @@
+
+<div class="bg box">
+    <img src="assets/basket.png" height="30"> Product Remove Confirmation !
+</div>
+<form #empForm="ngForm" class="box"> 
+<table class="table table-borderless" width="200" >
+    <tr>
+        <td width="100"><input type="hidden" name="id" ngModel ></td>
+    </tr>
+<tr>
+    <td> Code </td>
+    <td><input type="text" name="code" ngModel ></td>
+</tr>
+<tr>
+    <td>Name</td>
+    <td>
+        <input type="text" name="pname" ngModel >
+    </td> 
+</tr>
+<tr>
+    <td>Price</td>
+    <td><input type="text" name="price" ngModel></td>
+</tr> 
+<tr>
+    <td>Qty</td>
+    <td>
+        <input type="text" name="qty" ngModel>
+    </td> 
+</tr>
+</table>
+<br>
+<button class="btn btn-success" (click)="confirm()"> <img src="assets/confirm.png" height="30"> Confirm</button>
+&nbsp;
+<button  class="btn btn-danger"  (click)="cancel()"> <img src="assets/confirm.png" height="30"> Cancel</button>
+</form>

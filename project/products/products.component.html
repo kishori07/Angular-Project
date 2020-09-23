@@ -1,0 +1,31 @@
+<div class="container-fluid ">
+    <div class="row box">
+<h3 >Product List <a href="#" [routerLink]="['/add']"> <img src="assets/icon-add1.png" height="30"></a></h3> 
+       <br>
+       <br>
+       <br>
+    
+<table class="table table-bordered" width="300">
+<tr class="table-danger ">
+<th width="50"> ID</th>
+<th width="100">  Code</th>
+<th width="180">Name</th>
+<th width="100" class="text-right">Price</th>
+<th width="100" class="text-right"> Qty</th>
+<th width="200">Action</th>
+</tr>
+<tr *ngFor="let p of products" >
+    <td>{{p.id}}</td>
+ <td>{{p.code}}</td>
+ <td>{{p.pname}}</td>
+ <td class="text-right">{{p.price}}</td>
+ <td class="text-right">{{p.qty}}</td>
+ <td>
+     <button (click)="remove(p.id)" class=" btn btn-danger"> <img src="assets/remove-icon.png" height="20"> Remove</button> &nbsp;
+     <button (click)="onEdit(p)"  class=" btn btn-outline-danger"> <img src="assets/edit-icon.png" height="20"> Edit </button>
+ </td>
+</tr>
+        </table>
+
+    </div>
+</div>

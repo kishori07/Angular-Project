@@ -1,0 +1,56 @@
+    <h3 class="box">{{editMode?"Update Product":"New Product Entry"}}</h3>
+
+    <div *ngIf="status" [ngClass]="{error:status=='Fail',success:status=='Success'}" class="bg box" >{{message}}
+        <h3 *ngIf="status=='Success'">
+            <a href="#" [routerLink]="['/productList']" class="color">Show Product List</a>
+            <br>
+        </h3>
+    </div>
+<div *ngIf="editMode"></div>
+    <div [hidden]="editMode && status=='Success'" class="box">
+    <form class="form-horizontal" #empForm="ngForm" (submit)="onSubmit()">
+<div class="form-group">
+    <label class="control-label col-1 font">
+        <input type="hidden" name="id" ngModel class="form-control">
+        
+    </label>
+</div>
+        <div class="form-group row">
+            <label class="control-label col-1 font ">Code :<span class="font1 " [hidden]=!editMode>{{ code.value}}</span></label>
+            <div class="col-xs-4">
+                <input type="text" name="code" #code="ngModel" [hidden]='editMode' class="form-control" placeholder="Code"
+                    ngModel>
+            </div>
+        </div>
+        <div class="form-group row" >
+            <label class="control-label col-1 font">Name</label>
+            <div class="col-xs-4">
+                <input type="text" name="pname" ngModel class="form-control" placeholder="Product Name">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="control-label col-1 font" for="price">Price</label>
+            <div class="col-xs-4 ">
+                <input type="text" name="price" class="form-control" ngModel placeholder="Price">
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="qty" class="control-label col-1 font"> Qty</label>
+            <div class="col-xs-4">
+                <input type="text" name="qty" class="form-control" ngModel placeholder="Quantity">
+            </div>
+        </div>
+
+        <button class="btn btn-danger"> <img src="assets/plus1.png" height="30"> {{editMode?"Update Product":"Add Product"}}</button>
+        &nbsp;
+        <button class="btn btn-outline-danger" (click)="onCancel()" [hidden]="editMode"><img src="assets/cancel.png" height="30"> Cancel</button>
+
+
+    </form>
+
+
+
+
+</div>

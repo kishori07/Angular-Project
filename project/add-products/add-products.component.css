@@ -1,0 +1,26 @@
+.box{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.font{
+    font-weight: bolder;
+}
+.font1{
+    font-size: 25px;
+    
+}
+.bg{
+    height:40px;
+    width:70%;
+    background-color: rgb(255, 107, 131);
+     border: 1px solid rgb(250, 33, 69);
+     color:rgb(250, 33, 69);
+     font-size: 25px;
+     
+}
+.color{
+    color: tomato;
+    height:40px;
+    width:300px;
+
+}
